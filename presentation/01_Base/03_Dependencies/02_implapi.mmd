@@ -1,0 +1,29 @@
+---
+title: implementation VS api
+---
+
+flowchart BT
+    subgraph "`**api**`"
+        direction BT
+        app1[(app)]
+        feature11(feature1)
+        core1(core)
+
+        feature11 -- implementation --> app1
+        core1 -- api --> feature11
+        core1 -. доступен\nтранзитивно .-> app1
+    end
+
+    subgraph "`**implementation**`"
+        direction BT
+        app2[(app)]
+        feature12(feature1)
+        core2(core)
+
+        feature12 -- implementation --> app2
+        core2 -- implementation --> feature12
+        core2 -. не доступен .-x app2
+%%        todo
+%%        core2 -- implementation --> app2
+    end
+

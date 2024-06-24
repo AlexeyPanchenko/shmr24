@@ -1,0 +1,19 @@
+---
+title: Gradle Daemon
+---
+flowchart LR
+    gradlew([./gradlew build])
+
+
+    gradlew --x run("Run Gradle process")
+
+%%    client("Gradle
+%%    client run")
+%%    daemon("Gradle
+%%    daemon run")
+%%    gradlew --> client
+%%    client -- local socket --> daemon
+%%    daemon -- local socket --> client
+
+
+

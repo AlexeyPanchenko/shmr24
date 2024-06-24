@@ -1,0 +1,13 @@
+---
+title: buildTypes + productFlavours
+---
+
+flowchart TB
+    code([Кодовая база])
+    freeDebug(freeDebug.apk)
+    paidDebug(paidDebug.apk)
+    freeRelease(freeRelease.apk)
+    paidRelease(paidRelease.apk)
+
+    code --> freeDebug & paidDebug
+    code --> freeRelease & paidRelease

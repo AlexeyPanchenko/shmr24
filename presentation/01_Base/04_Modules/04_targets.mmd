@@ -1,0 +1,34 @@
+---
+title: Multi targets
+---
+
+flowchart BT
+
+    feature1 & feature2 --> app
+    core --> app
+    core --> feature1
+    core --> feature2
+    network --> feature1
+    network --> feature2
+    network --> app
+
+    network --> app2
+    feature2 --> app2
+
+    subgraph Target1
+        app[(app1)]
+    end
+
+    subgraph Target2
+        app2[(app2)]
+    end
+
+    subgraph Features
+        feature1(feature1)
+        feature2(feature2)
+    end
+
+    subgraph Core
+        core(core)
+        network(network)
+    end

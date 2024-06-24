@@ -1,0 +1,22 @@
+---
+title: Conflicts
+
+config:
+gitGraph:
+parallelCommits: true
+---
+gitGraph TB:
+    commit id: "commit 0"
+    branch feature1
+    checkout feature1
+    commit id: "feature1 commit"
+%%    commit id: "Core1 commit"
+    checkout main
+    branch feature2
+    checkout feature2
+    commit id: "feature2 commit"
+%%    commit id: "Core2 commit"
+    checkout main
+    merge feature1
+    merge feature2
+%%    merge feature2 type: REVERSE tag: "Conflict"

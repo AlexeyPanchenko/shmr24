@@ -1,0 +1,16 @@
+stateDiagram-v2
+
+    [*] --> Task: task started
+
+    Task: Gradle Task
+    state Task {
+        action1: action1 - println("before")
+        action2: action2 - println("Run")
+        action3: action3 - println("after")
+        action1 --> action2
+        action2 --> action3
+    }
+    Task --> [*]: task finished
+
+
+

@@ -1,0 +1,22 @@
+---
+title: Gradle Wrapper
+---
+flowchart TB
+    gradlew([./gradlew build])
+    prop("`Read
+    **gradle-wrapper.properies**`")
+    check("Check Gradle in cache")
+    cache{In Cache?}
+    build("gradle build")
+    download("Download Gradle with
+    version {version}")
+
+    gradlew --> prop
+    prop -- "~/.gradle/wrapper/dists/{version}/{hash}/gradle-version.bin" --> check
+    check --> cache
+
+    cache -->|No| download
+    download --> build
+    cache -->|Yes| build
+
+

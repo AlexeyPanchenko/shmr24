@@ -26,8 +26,8 @@ android {
     }
   }
   compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
   }
   kotlinOptions {
     jvmTarget = "1.8"
@@ -55,10 +55,4 @@ dependencies {
   debugImplementation("androidx.compose.ui:ui-test-manifest")
 
   testImplementation("junit:junit:4.13.2")
-
-  androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
-  androidTestImplementation("androidx.test.ext:junit:1.1.5")
-  androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-  androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-
 }

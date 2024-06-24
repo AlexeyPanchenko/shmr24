@@ -1,0 +1,20 @@
+flowchart BT
+    app[(app)]
+
+    feature1 & feature2 --> app
+    core --> app
+    core --> feature1
+    core --> feature2
+    network --> feature1
+    network --> feature2
+    network --> app
+
+    subgraph Features
+        feature1(feature1)
+        feature2(feature2)
+    end
+
+    subgraph Core
+        core(core)
+        network(network)
+    end

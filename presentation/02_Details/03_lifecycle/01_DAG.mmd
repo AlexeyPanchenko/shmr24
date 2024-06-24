@@ -1,0 +1,17 @@
+---
+title: DAG
+---
+flowchart BT
+    build(build) --> check(check)
+    check --> test(test)
+    test --> ...(...)
+    build(build) --> assemble(assemble)
+    assemble --> jar(jar)
+    jar --> classes(classes)
+    classes --> compileJava(compileJava)
+    classes --> processResources(processResources)
+
+%%    jar --x assemble
+%%    classes --x assemble
+
+

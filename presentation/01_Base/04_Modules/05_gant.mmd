@@ -1,0 +1,25 @@
+gantt
+    title Таймлайн сборки
+    dateFormat mm:ss
+    section Сборка одномодульного проекта
+        app-preBuild :active, t1, 2024-07-05T19:05:00, 10s
+        app-mergeDebugResources :active, t2, after t1, 20s
+        app-processDebugMainManifest :active, t3, after t2, 25s
+        app-processDebugResources    :active, t4, after t2, 35s
+        app-compileDebugKotlin    :active, t5, after t4, 40s
+%% todo
+%%    section Сборка многомодульного проекта
+%%        core-preBuild :active, c1, 2024-07-05T19:05:00, 10s
+%%        feature1-preBuild :active, f1, 2024-07-05T19:05:00, 12s
+%%        app-preBuild :active, a1, 2024-07-05T19:05:00, 15s
+%%
+%%        core-processDebugMainManifest :active, c3, after f1, 10s
+%%        feature1-processDebugMainManifest :active, f3, after f1, 10s
+%%
+%%        core-compileDebugKotlin      :active, c4, after f3, 15s
+%%        feature1-compileDebugKotlin  :active, f4, after f3, 20s
+%%
+%%        app-mergeDebugResources :active, a2, after f4, 10s
+%%        app-processDebugMainManifest :active, a3, after a2, 3s
+%%        app-processDebugResources    :active, a4, after a3, 7s
+%%        app-compileDebugKotlin       :active, a5, after a4, 10s
