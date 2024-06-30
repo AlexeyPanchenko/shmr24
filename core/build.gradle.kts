@@ -27,6 +27,7 @@ android {
 }
 
 dependencies {
+    api(project(":model"))
     api("com.squareup.retrofit2:retrofit:2.11.0")
     api("com.squareup.retrofit2:converter-gson:2.11.0")
     api("com.google.code.gson:gson:2.11.0")

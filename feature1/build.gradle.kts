@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.yandex.shmr24"
+    namespace = "ru.yandex.shmr24.feature1"
     compileSdk = 34
 
     defaultConfig {

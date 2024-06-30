@@ -1,0 +1,4 @@
+com.google.code.gson:gson:2.2.4
+
+- ./gradlew :app:dependencies --configuration debugRuntimeClasspath
+- ./gradlew :app:dependencyInsight --configuration debugCompileClasspath --dependency com.squareup.retrofit2:retrofit

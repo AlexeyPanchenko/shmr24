@@ -7,13 +7,10 @@ flowchart LR
 
     gradlew --x run("Run Gradle process")
 
-%%    client("Gradle
-%%    client run")
-%%    daemon("Gradle
-%%    daemon run")
-%%    gradlew --> client
-%%    client -- local socket --> daemon
-%%    daemon -- local socket --> client
-
-
-
+    client("Gradle
+    client run")
+    gradlew --> client
+    daemon("Gradle
+    daemon run")
+    client -- local socket --> daemon
+    daemon -- local socket --> client

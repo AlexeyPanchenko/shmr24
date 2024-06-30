@@ -4,15 +4,14 @@ title: Multi targets
 
 flowchart BT
 
+    core(core)
+    model(model)
+
     feature1 & feature2 --> app
-    core --> app
     core --> feature1
     core --> feature2
-    network --> feature1
-    network --> feature2
-    network --> app
+    model --> core
 
-    network --> app2
     feature2 --> app2
 
     subgraph Target1
@@ -28,7 +27,3 @@ flowchart BT
         feature2(feature2)
     end
 
-    subgraph Core
-        core(core)
-        network(network)
-    end

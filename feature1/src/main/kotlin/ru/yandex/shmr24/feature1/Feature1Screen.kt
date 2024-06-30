@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import kotlinx.coroutines.runBlocking
 import ru.yandex.shmr24.core.NetworkRepository
+import ru.yandex.shmr24.model.DogInfo
 
 val text = mutableStateOf("")
 
@@ -47,11 +48,14 @@ fun Feature1Screen(navController: NavController, repository: NetworkRepository) 
                     Button(
                         colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
                         onClick = {
-                        val dogInfo = runBlocking {
-                            repository.getDogInfo()
-                        }.body()
-                        text.value = "message = ${dogInfo?.message}\nstatus = ${dogInfo?.status}"
-                    }) {
+                            val dogInfo = runBlocking {
+                                runCatching { repository.getDogInfo().body() }
+                                    .getOrElse {
+                                        it.printStackTrace()
+                                        DogInfo(it.message ?: "Error", "Error") }
+                            }
+                            text.value = "message = ${dogInfo?.message}\nstatus = ${dogInfo?.status}"
+                        }) {
                         Text(
                             color = Color.Red,
                             text = "get data"

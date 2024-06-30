@@ -1,0 +1,3 @@
+- ps aux | grep gradle | grep -v grep
+- ./gradlew --status
+- ./gradlew --stop

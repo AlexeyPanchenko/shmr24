@@ -11,20 +11,18 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.createGraph
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.yandex.shmr24.core.DogApiService
 import ru.yandex.shmr24.core.NetworkRepository
 import ru.yandex.shmr24.feature1.Feature1Screen
+import ru.yandex.shmr24.feature2.Feature2Screen
 import ru.yandex.shmr24.ui.theme.Shmr24Theme
 
 
@@ -57,6 +55,14 @@ class MainActivity : ComponentActivity() {
                         repository = repo
                     )
                 }
+                composable(
+                    route = "feature2"
+                ) {
+                    Feature2Screen(
+                        navController = navController,
+                        repository = repo
+                    )
+                }
             }
         }
     }
@@ -77,6 +83,13 @@ fun StartScreen(navController: NavController) {
                     }
                 ) {
                     Text("open feature1")
+                }
+                Button(
+                    onClick = {
+                        navController.navigate("feature2")
+                    }
+                ) {
+                    Text("open feature2")
                 }
             }
         }
