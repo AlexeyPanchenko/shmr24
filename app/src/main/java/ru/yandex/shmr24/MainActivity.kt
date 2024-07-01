@@ -17,10 +17,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import ru.yandex.shmr24.core.DogApiService
-import ru.yandex.shmr24.core.NetworkRepository
+import ru.yandex.shmr24.core.networkRepository
 import ru.yandex.shmr24.feature1.Feature1Screen
 import ru.yandex.shmr24.feature2.Feature2Screen
 import ru.yandex.shmr24.ui.theme.Shmr24Theme
@@ -31,12 +28,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val repo = NetworkRepository(
-            Retrofit.Builder()
-                .baseUrl("https://dog.ceo")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build().create(DogApiService::class.java)
-        )
+        val repo = networkRepository()
 
         setContent {
             val navController = rememberNavController()
@@ -84,12 +76,14 @@ fun StartScreen(navController: NavController) {
                 ) {
                     Text("open feature1")
                 }
-                Button(
-                    onClick = {
-                        navController.navigate("feature2")
+                if (BuildConfig.PAID) {
+                    Button(
+                        onClick = {
+                            navController.navigate("feature2")
+                        }
+                    ) {
+                        Text("open feature2")
                     }
-                ) {
-                    Text("open feature2")
                 }
             }
         }

@@ -25,6 +25,17 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+    flavorDimensions += "plan"
+    productFlavors {
+        create("paid") {
+            dimension = "plan"
+            buildConfigField("boolean", "PAID",  "true")
+        }
+        create("free") {
+            dimension = "plan"
+            buildConfigField("boolean", "PAID",  "false")
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -34,6 +45,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -60,5 +72,3 @@ dependencies {
 
     testImplementation("junit:junit:4.13.2")
 }
-
-//todo флейворы
