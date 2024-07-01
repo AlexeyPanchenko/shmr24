@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -27,10 +27,8 @@ android {
 }
 
 dependencies {
-    api(project(":model"))
-    api("com.squareup.retrofit2:retrofit:2.11.0")
-    api("com.squareup.retrofit2:converter-gson:2.11.0")
-    api("com.google.code.gson:gson:2.11.0")
-
-    testImplementation("junit:junit:4.13.2")
+    api(projects.model)
+    api(libs.retrofit)
+    api(libs.retrofit.converter.gson)
+    api(libs.gson)
 }

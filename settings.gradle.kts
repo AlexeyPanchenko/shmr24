@@ -1,5 +1,7 @@
 rootProject.name = "Shmr24"
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include(":app")
 include(":core")
 include(":core2")
@@ -19,6 +21,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("prepare/libs.toml"))
+        }
     }
 }
 
