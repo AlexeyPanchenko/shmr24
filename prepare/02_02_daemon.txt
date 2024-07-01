@@ -1,3 +1,7 @@
 - ps aux | grep gradle | grep -v grep
 - ./gradlew --status
 - ./gradlew --stop
+
+org.gradle.daemon=true
+--no-daemon/--daemon
+--console=plain
