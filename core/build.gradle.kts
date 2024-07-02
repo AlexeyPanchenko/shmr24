@@ -1,34 +1,7 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
-}
-
-android {
-    namespace = "ru.yandex.shmr24"
-    compileSdk = 34
-
-    defaultConfig {
-        minSdk = 24
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    id("android-core-lib-convention")
 }
 
 dependencies {
     api(projects.model)
-    api(libs.retrofit)
-    api(libs.retrofit.converter.gson)
-    api(libs.gson)
 }

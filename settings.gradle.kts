@@ -11,6 +11,7 @@ include(":feature1")
 include(":feature2")
 
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
