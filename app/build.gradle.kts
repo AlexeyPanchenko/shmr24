@@ -1,3 +1,9 @@
+import com.android.build.gradle.internal.tasks.factory.dependsOn
+import ru.yandex.shmr24.tasks.GenerateNameTask
+import ru.yandex.shmr24.tasks.PrintHelloTask
+import ru.yandex.shmr24.tasks.PrintUserNameTask
+import ru.yandex.shmr24.tasks.SayHelloUserTask
+
 plugins {
     id("android-app-convention")
 }
@@ -30,3 +36,17 @@ dependencies {
     debugImplementation(libs.compose.ui.test.manifest)
     testImplementation(libs.junit)
 }
+
+val printHelloTask = tasks.register("printHello", PrintHelloTask::class)
+val printUserNameTask = tasks.register("printUserName", PrintUserNameTask::class)
+
+//printUserNameTask.dependsOn(printHelloTask)
+//printUserNameTask.get().shouldRunAfter(printHelloTask)
+
+//val userNameTask = tasks.register("userName", GenerateNameTask::class) {
+//    userNameFile.set(File("userName.txt"))
+//}
+//
+//tasks.register("helloUser", SayHelloUserTask::class) {
+//    userNameFile.set(userNameTask.get().userNameFile)
+//}
