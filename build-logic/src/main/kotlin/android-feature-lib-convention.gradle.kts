@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    baseAndroidLibConfig()
+    baseAndroidConfig()
     buildFeatures {
         compose = true
     }

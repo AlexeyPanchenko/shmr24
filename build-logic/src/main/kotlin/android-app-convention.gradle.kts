@@ -7,12 +7,6 @@ plugins {
 
 configure<BaseAppModuleExtension> {
     baseAndroidConfig()
-    compileSdk = AndroidConst.COMPILE_SKD
-    defaultConfig {
-        vectorDrawables {
-            useSupportLibrary = true
-        }
-    }
     buildFeatures {
         compose = true
         buildConfig = true

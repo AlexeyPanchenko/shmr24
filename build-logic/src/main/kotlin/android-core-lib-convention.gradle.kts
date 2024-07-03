@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    baseAndroidLibConfig()
+    baseAndroidConfig()
 }
 
 dependencies {
