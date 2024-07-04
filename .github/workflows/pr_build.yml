@@ -7,6 +7,8 @@ on:
 
 env:
   gradleFlags: --parallel --stacktrace --no-configuration-cache --no-daemon
+  TG_CHAT: ${{ secrets.TG_CHAT }}
+  TG_TOKEN: ${{ secrets.TG_TOKEN }}
 
 jobs:
   build-android:
