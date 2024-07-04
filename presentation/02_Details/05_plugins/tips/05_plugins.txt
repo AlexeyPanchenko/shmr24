@@ -1,0 +1,15 @@
+gradlePlugin {
+    plugins.register("myPlugin") {
+        id = "my-plugin"
+        implementationClass = "ru.yandex.shmr24.plugins.MyPlugin"
+    }
+}
+---
+
+val isAndroidApp: Boolean = project.plugins.findPlugin("com.android.application") != null
+if (!isAndroidApp) {
+    throw GradleException("'com.android.application' plugin required.")
+}
+
+val androidComponents = project.extensions.findByType(AndroidComponentsExtension::class.java)
+      ?: throw GradleException("android plugin required.")
