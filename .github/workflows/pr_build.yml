@@ -11,7 +11,7 @@ env:
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
 
 jobs:
-  build-android:
+  build-and-telegram-report:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

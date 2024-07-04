@@ -1,6 +1,5 @@
 package ru.yandex.shmr24.practice
 
-import io.ktor.client.statement.*
 import kotlinx.coroutines.runBlocking
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
@@ -32,12 +31,12 @@ abstract class TelegramReporterTask @Inject constructor(
             ?.forEach {
                 runBlocking {
                     telegramApi.sendMessage("Build finished", token, chatId).apply {
-                        println(bodyAsText())
+                        println("Status = $status")
                     }
                 }
                 runBlocking {
                     telegramApi.upload(it, token, chatId).apply {
-                        println(bodyAsText())
+                        println("Status = $status")
                     }
                 }
             }
