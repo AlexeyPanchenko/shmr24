@@ -1,3 +1,0 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
-org.gradle.configuration-cache=true

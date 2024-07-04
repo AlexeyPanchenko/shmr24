@@ -1,0 +1,9 @@
+versionCatalogs {
+    create("libs") {
+        from(files("prepare/libs.toml"))
+    }
+}
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+org.gradle.configuration-cache=true
