@@ -1,0 +1,1 @@
+private const val BASE_URL = "https://api.telegram.org"

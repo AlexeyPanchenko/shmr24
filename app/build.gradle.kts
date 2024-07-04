@@ -1,6 +1,7 @@
 plugins {
     id("android-app-convention")
     id("my-plugin")
+    id("telegram-reporter")
 }
 
 myPlugin {
@@ -8,6 +9,11 @@ myPlugin {
         enable.set(true)
         prefix.set("PPPPP")
     }
+}
+
+tgReporter {
+    token.set(providers.environmentVariable("TG_TOKEN"))
+    chatId.set(providers.environmentVariable("TG_CHAT"))
 }
 
 android {
