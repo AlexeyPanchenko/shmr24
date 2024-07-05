@@ -2,3 +2,4 @@ com.google.code.gson:gson:2.2.4
 
 - ./gradlew :app:dependencies --configuration paidDebugCompileClasspath
 - ./gradlew :app:dependencyInsight --configuration paidDebugCompileClasspath --dependency com.squareup.retrofit2:retrofit
+- ./gradlew buildEnvironment
