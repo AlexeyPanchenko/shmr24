@@ -4,11 +4,17 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core2" />
+            <option value="$PROJECT_DIR$/feature1" />
+            <option value="$PROJECT_DIR$/feature2" />
+            <option value="$PROJECT_DIR$/model" />
+            <option value="$PROJECT_DIR$/model2" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
